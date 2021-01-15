@@ -9,6 +9,6 @@ test_that("authentication was successful", {
   expect_equal(get_auth$status_code, 200)
 })
 
-test_that("authentication was successful", {
+test_that("stream retrieval was successful", {
   expect_equal(get_streams$status_code, 200)
 })
