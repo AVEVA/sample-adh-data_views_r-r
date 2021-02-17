@@ -5,5 +5,5 @@ get_data_view_interpolated <- function(data_access_endpoint, tenant_id, namespac
                             "/Data/Interpolated?startIndex=", start_index, "&endIndex=", end_index, "&interval=", interval, "&count=", count, sep = "")
 
   # execute the request
-  data_view_response <- httr::GET(dataview_req_url, add_headers(authorization = paste("Bearer", bearer_token, sep = " ")), accept("text/plain"), content_type_json())
+  data_view_response <- httr::GET(dataview_req_url, httr::add_headers(authorization = paste("Bearer", bearer_token, sep = " ")), httr::accept("text/plain"), httr::content_type_json())
 }

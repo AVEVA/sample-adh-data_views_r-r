@@ -4,18 +4,30 @@ test_that("data view interpolated data retrieval works", {
   config <- config::get() # defaults to config.yml
   Sys.setenv(R_CONFIG_ACTIVE = "default")
 
-  # get auth response
-  auth_response <- get_auth(config$client_id, config$client_secret)
+  client_id <- ""
+  client_secret <- ""
+  tenant <- ""
+  namespace <- "Development"
+
+  # get access token
+  auth_response <- get_auth(client_id, client_secret)
+  auth_response_text <- httr::content(auth_response, "text", encoding = "UTF-8")
+  auth_response_json <- jsonlite::fromJSON(auth_response_text, flatten=TRUE)
+  access_token <- auth_response_json$access_token
 
   # data view configuration
-  dataview_id <- "kduffy_EF_DataView1"
-  start_index <- "3/3/2017"
-  end_index <- "7/13/2018"
-  interval <- "1.00:00:00"
-  count <- "100000"
-  data_access_endpoint <- paste(config$resource, "/api/", config$api_version, sep = "")
+  dataview_id <- "WindTurbineData"
+  start_index <- "3/11/2020"
+  end_index <- "3/12/2020"
+  interval <- "00:01:00"
+  count <- "10000"
+  resource <- "https://dat-b.osisoft.com"
+  api_version <- "v1"
+  data_access_endpoint <- paste(resource, "/api/", api_version, sep = "")
 
   # execute the request
-  data_view_response <- get_data_view_interpolated(data_access_endpoint, config$tenant_id, config$namespace_id, dataview_id, start_index, end_index, interval, count, access_token)
+  data_view_response <- get_data_view_interpolated(data_access_endpoint, tenant, namespace, dataview_id, start_index, end_index, interval, count, access_token)
 
+  # confirm receipt of a successful status code in response
+  expect_equal(data_view_response$status_code, 200)
 })
