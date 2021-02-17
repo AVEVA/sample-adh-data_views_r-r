@@ -10,10 +10,7 @@ test_that("data view interpolated data retrieval works", {
   namespace <- "Development"
 
   # get access token
-  auth_response <- get_auth(client_id, client_secret)
-  auth_response_text <- httr::content(auth_response, "text", encoding = "UTF-8")
-  auth_response_json <- jsonlite::fromJSON(auth_response_text, flatten=TRUE)
-  access_token <- auth_response_json$access_token
+  access_token <- get_auth(client_id, client_secret)
 
   # data view configuration
   dataview_id <- "WindTurbineData"
@@ -26,8 +23,8 @@ test_that("data view interpolated data retrieval works", {
   data_access_endpoint <- paste(resource, "/api/", api_version, sep = "")
 
   # execute the request
-  data_view_response <- get_data_view_interpolated(data_access_endpoint, tenant, namespace, dataview_id, start_index, end_index, interval, count, access_token)
+  my_data_frame <- get_data_view_interpolated(data_access_endpoint, tenant, namespace, dataview_id, start_index, end_index, interval, count, access_token)
 
-  # confirm receipt of a successful status code in response
-  expect_equal(data_view_response$status_code, 200)
+  # confirm the data frame has more than a header row. This presumes that the data frame contains at least one row of data
+  expect_gt(nrow(my_data_frame), 2)
 })

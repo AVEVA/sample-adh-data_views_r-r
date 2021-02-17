@@ -5,22 +5,20 @@
 get_data_view_interpolated(data_access_endpoint, tenant_id, namespace_id, dataview_id, start_index, end_index, interval, count, access_token)
 }
 \description{
-Retrieves interpolated data from OCS for the specified data view at the specified time indexes.
-This is particularly useful for working with data frames in R.
+Retrieves interpolated data from OCS for the specified data view at the specified time indexes,
+parses the response, and returns the data as a data frame.
 }
 \examples{
-data_access_endpoint <- "https://dat-b.osisoft.com/api/v1")
-tenant_id <- "tenant1"
+data_access_endpoint <- "https://dat-b.osisoft.com/api/v1"
+tenant_id <- "<OCS tenant id>"
 namespace_id <- "samples"
 dataview_id <- "DataView1"
 start_index <- "1/1/2021"
 end_index <- "1/3/2021"
 interval <- "01:00:00"
 count <- "100"
-# access_token from get_auth function example
 
-data_view_response <- get_data_view_interpolated(data_access_endpoint, tenant_id, namespace_id, dataview_id, start_index, end_index, interval, count, access_token)
-data_view_response_text <- content(data_view_response, "text")
-data_view_response_json <- fromJSON(data_view_response_text, flatten=TRUE)
-my_data_frame <- as.data.frame(data_view_response_json)
+access_token <- get_auth(client_id, client_secret)
+
+my_data_frame <- get_data_view_interpolated(data_access_endpoint, tenant_id, namespace_id, dataview_id, start_index, end_index, interval, count, access_token)
 }

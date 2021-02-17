@@ -7,8 +7,8 @@ test_that("authentication works", {
   client_secret <- ""
 
   # get auth response
-  auth_response <- get_auth(client_id, client_secret)
+  access_token <- get_auth(client_id, client_secret)
 
-  # confirm receipt of a successful status code in response
-  expect_equal(auth_response$status_code, 200)
+  # confirm receipt of a string longer than 100 characters (presumed to be an access token)
+  expect_gt(nchar(access_token), 100)
 })
