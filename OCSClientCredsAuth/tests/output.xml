@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites>
-  <testsuite name="Sample" timestamp="2021-01-15T16:23:01Z" hostname="KDUFFY5530" tests="2" skipped="0" failures="0" errors="0" time="0.66">
-    <testcase time="0.659999999999854" classname="Sample" name="authentication_was_successful"/>
-    <testcase time="0" classname="Sample" name="stream_retrieval_was_successful"/>
-  </testsuite>
-</testsuites>
