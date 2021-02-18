@@ -53,8 +53,16 @@ This sample data is similar to what you might have from a site where the data ha
 - Select `Build` > `Install and Restart` (Ctrl + Shift + B)
 
 #### Using tar.gz file
-- Clone this repository to a local drive
-- 
+Note: Following version control best practices, the package's .tar.gz file is not hosted on GitHub, but can be built locally from the source code.
+- Clone this repository to a local drive on a machine with RStudio
+- Open the [OCSDataView\OCSDataView.Rproj](OCSDataView\OCSDataView.Rproj) in R Studio
+- Select `Build` > `Build Source Package`
+- Confirm that `OCSDataView_{version}.tar.gz` is now located in the sample directory
+- Copy this file to any machine that would like to use the library
+- Install the library using `install.packages` command:
+  - `install.packages(path_to_file, repos = NULL, type="source")`
+- Note: If installing the library from its .tar.gz file is desired, please provide `samples@osisoft.com` with details on the use case and feedback so we can discuss alternate hosting platforms for this file (such as [CRAN](https://cran.r-project.org/)).
+
 
 #### Run the Sample
 - Open [Sample.R](Sample.R) and set the data view configuration to point to the desired data view and time
