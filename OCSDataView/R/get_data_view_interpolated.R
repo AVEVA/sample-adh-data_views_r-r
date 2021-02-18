@@ -11,7 +11,7 @@ get_data_view_interpolated <- function(data_access_endpoint, tenant_id, namespac
 
   # verify the response
   if(data_view_response$status_code < 200 || data_view_response$status_code >= 300){
-    stop(paste("Error retrieving access token. Status code:", data_view_response$status_code, sep=" "))
+    stop(paste("Error retrieving data view. Status code:", data_view_response$status_code, sep=" "))
   }
 
   # process the output into a data frame

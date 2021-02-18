@@ -67,9 +67,8 @@ This sample data is similar to what you might have from a site where the data ha
 ### Test Using RStudio
 
 - Open the library in RStudio
-- Make a copy of the package's [test_config.placeholder.yml](OCSDataView\test_config.placeholder.yml) and rename it to test_config.yml. This repository's `.gitignore` rules should prevent the file from ever being checked in to any fork or branch, to ensure credentials are not compromised.
-  - Replace the values in this file as necessary
-  - Note: The placeholder file preloads the data view values for use with the bulk upload sample wind data
+- Replace the values prefixed with `test_only_` in this file as necessary
+  - Note: The placeholder file preloads these data view values for use with the bulk upload sample wind data
 - Execute the tests in the terminal
   - library(devtools)
   - use_testthat
