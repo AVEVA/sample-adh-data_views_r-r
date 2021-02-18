@@ -5,4 +5,9 @@ default:
   api_version: "v1"
   tenant: "REPLACE_WITH_TENANT_ID"
   namespace: "REPLACE_WITH_NAMESPACE_ID"
+  test_only_dataview_id: "WindTurbineData"
+  test_only_start_index: "3/11/2020"
+  test_only_end_index: "3/12/2020"
+  test_only_interval: "00:01:00"
+  test_only_count: "10000"
   

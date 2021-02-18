@@ -44,12 +44,17 @@ The data we are using is available in our sample-ocs-bulk_upload-dotnet reposito
 
 This sample data is similar to what you might have from a site where the data has unexpected values and not every turbine behaves exactly the same. The data is only for 1 day. Repeating this exercise but using more days of data would give you a better prediction.
 
-### Using R Studio
+### Install the Library
 
-#### Install the Library
+#### Using R Studio
+- Clone this repository to a local drive
 - Open [OCSDataView.Rproj](OCSDataView\OCSDataView.Rproj) in RStudio
 - Select `Build` > `Load All` (Ctrl + Shift + L)
 - Select `Build` > `Install and Restart` (Ctrl + Shift + B)
+
+#### Using tar.gz file
+- Clone this repository to a local drive
+- 
 
 #### Run the Sample
 - Open [Sample.R](Sample.R) and set the data view configuration to point to the desired data view and time
@@ -62,8 +67,9 @@ This sample data is similar to what you might have from a site where the data ha
 ### Test Using RStudio
 
 - Open the library in RStudio
-- Confirm the config.yml file has the `testing_only` configuration items filled in
-  - The placeholder file preloads these values for use with the bulk upload sample wind data
+- Make a copy of the package's [test_config.placeholder.yml](OCSDataView\test_config.placeholder.yml) and rename it to test_config.yml. This repository's `.gitignore` rules should prevent the file from ever being checked in to any fork or branch, to ensure credentials are not compromised.
+  - Replace the values in this file as necessary
+  - Note: The placeholder file preloads the data view values for use with the bulk upload sample wind data
 - Execute the tests in the terminal
   - library(devtools)
   - use_testthat

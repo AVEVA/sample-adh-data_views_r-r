@@ -40,3 +40,4 @@ vignettes/*.pdf
 
 # Credential Config Files
 config.yml
+test_config.yml
