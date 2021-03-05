@@ -2,7 +2,7 @@
 \alias{get_data_view_interpolated}
 \title{OCS Data View Interpolated Data Retrieval}
 \usage{
-get_data_view_interpolated(data_access_endpoint, tenant_id, namespace_id, dataview_id, start_index, end_index, interval, count, access_token)
+get_data_view_interpolated(data_access_endpoint, tenant_id, namespace_id, dataview_id, start_index, end_index, interval, access_token)
 }
 \description{
 Retrieves interpolated data from OCS for the specified data view at the specified time indexes,
@@ -16,9 +16,8 @@ dataview_id <- "DataView1"
 start_index <- "1/1/2021"
 end_index <- "1/3/2021"
 interval <- "01:00:00"
-count <- "100"
 
 access_token <- get_auth(client_id, client_secret)
 
-my_data_frame <- get_data_view_interpolated(data_access_endpoint, tenant_id, namespace_id, dataview_id, start_index, end_index, interval, count, access_token)
+my_data_frame <- get_data_view_interpolated(data_access_endpoint, tenant_id, namespace_id, dataview_id, start_index, end_index, interval, access_token)
 }
