@@ -6,7 +6,7 @@ test_that("data view interpolated data retrieval works", {
   Sys.setenv(R_CONFIG_ACTIVE = "default")
 
   # get access token
-  access_token <- get_auth(test_config$client_id, test_config$client_secret)
+  access_token <- OCSDataView::get_auth(test_config$client_id, test_config$client_secret)
 
   # data view configuration
   data_access_endpoint <- paste(test_config$resource, "/api/", test_config$api_version, sep = "")
