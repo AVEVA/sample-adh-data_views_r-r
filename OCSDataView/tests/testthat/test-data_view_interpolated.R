@@ -12,7 +12,7 @@ test_that("data view interpolated data retrieval works", {
   data_access_endpoint <- paste(test_config$resource, "/api/", test_config$api_version, sep = "")
 
   # execute the request
-  my_data_frame <- get_data_view_interpolated(data_access_endpoint, test_config$tenant, test_config$namespace, test_config$test_only_dataview_id, test_config$test_only_start_index, test_config$test_only_end_index, test_config$test_only_interval, access_token)
+  my_data_frame <- OCSDataView::get_data_view_interpolated(data_access_endpoint, test_config$tenant, test_config$namespace, test_config$test_only_dataview_id, test_config$test_only_start_index, test_config$test_only_end_index, test_config$test_only_interval, access_token)
 
   # confirm the data frame has more than a header row. This presumes that the data frame contains at least two rows of data
   expect_gt(nrow(my_data_frame), 2)
