@@ -3,4 +3,4 @@ require("pacman", quietly = TRUE)
 p_load("testthat", "xml2")
 
 options(testthat.output_file = ".\\output.xml")
-test_results <- testthat::test_local(reporter="junit")
+test_results <- testthat::test_local(path=".\\OCSDataView", reporter="junit")
