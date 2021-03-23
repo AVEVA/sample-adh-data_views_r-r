@@ -38,5 +38,8 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
+# unit test output
+output.xml
+
 # Credential Config Files
 config.yml
