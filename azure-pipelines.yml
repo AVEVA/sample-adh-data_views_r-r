@@ -27,9 +27,9 @@ resources:
 variables:
   - template: '/miscellaneous/build_templates/variables.yml@templates'
   - name: CredFile
-    value: test_config.R
+    value: config.yml
   - name: CredFileLibrary
-    value: product-readiness.data_views_r.R
+    value: product-readiness.data_views_r.r
   - name: analysisProject
     value: Data_Views_R
 

@@ -42,4 +42,4 @@ vignettes/*.pdf
 output.xml
 
 # Credential Config Files
-config.yml
+*config.yml
