@@ -1,4 +1,8 @@
 if (!require("pacman")) install.packages("pacman", repos = "https://cran.r-project.org", quiet = TRUE)
+if (!require("testthat")) install.packages("testthat", repos = "https://cran.r-project.org", quiet = TRUE)
+if (!require("config")) install.packages("config", repos = "https://cran.r-project.org", quiet = TRUE)
+if (!require("httr")) install.packages("httr", repos = "https://cran.r-project.org", quiet = TRUE)
+if (!require("jsonlite")) install.packages("jsonlite", repos = "https://cran.r-project.org", quiet = TRUE)
 
 require("pacman", quietly = TRUE)
 p_load("testthat", "xml2")
