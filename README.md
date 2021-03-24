@@ -2,7 +2,7 @@
 
 **verison:** 1.0.0
 
-[![Build Status](https://dev.azure.com/osieng/engineering/_apis/build/status/product-readiness/OCS/osisoft.sample-ocs-authentication_client_credentials-r?repoName=osisoft%2Fsample-ocs-authentication_client_credentials-r&branchName=main)](https://dev.azure.com/osieng/engineering/_build/latest?definitionId=<id>&repoName=osisoft%2Fsample-ocs-authentication_client_credentials-r&branchName=main)
+[![Build Status](https://dev.azure.com/osieng/engineering/_apis/build/status/product-readiness/osisoft.sample-ocs-data_views_r-r?branchName=main)](https://dev.azure.com/osieng/engineering/_build/latest?definitionId=3168&branchName=main)
 
 This sample consists of an [R Package](OCSDataView) and an [R Script](Sample.R). 
 
