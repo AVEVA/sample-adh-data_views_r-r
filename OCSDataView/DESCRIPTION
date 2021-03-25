@@ -1,7 +1,7 @@
 Package: OCSDataView
 Type: Package
 Title: Provide Shaped Data from OCS
-Version: 0.1.0
+Version: 1.0.0
 Author: OSIsoft LLC
 Maintainer: OSISoft Samples <samples@osisoft.com>
 Description: This package is a very simple client library that connects
