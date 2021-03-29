@@ -28,33 +28,9 @@ get_data_view_interpolated <- function(data_access_endpoint, tenant_id, namespac
     overall_data_frame <- rbind(overall_data_frame, this_data_frame)
 
     # check for another page of rows
-    more_results <- FALSE
-    link_header <- data_view_response$headers$link
-    if (grepl("rel=\"next\"", link_header)){
-      more_results <- TRUE
-
-      # split the links into an array of links and find the one that's for the next page
-      links <- strsplit(link_header, ', ')
-      numlinks <- length(links[[1]])
-
-      # iterate through the links to find the one for next
-      num <- 1
-      found <- FALSE
-      while (!found) {
-        thislink <- links[[1]][num]
-        # check if this link is the one for next
-        if (grepl("rel=\"next\"", thislink)) {
-          # if so, end the loop
-          found <- TRUE
-          # parse out the url link from inside the <>'s and trim off the label
-          thislink <- sub("<", "", thislink)
-          thislink <- sub(">; rel=\"next\"", "", thislink)
-          # prepare the url for the next GET request
-          dataview_req_url <- thislink
-        }
-        # if not move on to the next link
-        num <- num + 1
-      }
+    dataview_req_url <- data_view_response$headers$'next-page'
+    if (is.null(dataview_req_url)) {
+      more_results <- FALSE
     }
   }
 
