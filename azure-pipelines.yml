@@ -57,4 +57,4 @@ jobs:
 
       - template: '/miscellaneous/build_templates/analysis.yml@templates'
         parameters:
-          skip: true
+          skipPolaris: true
