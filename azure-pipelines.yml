@@ -45,7 +45,7 @@ jobs:
           fileLibrary: $(CredFileLibrary)
 
       - script: Rscript.exe run_tests.R
-        continueOnError: 'true'
+        continueOnError: 'false'
         displayName: 'Run tests'
 
       - task: PublishTestResults@2
