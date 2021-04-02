@@ -30,6 +30,10 @@ variables:
     value: config.yml
   - name: CredFileLibrary
     value: product-readiness.data_views_r.r
+  - name: ComparisonFile
+    value: sampleoutput.csv
+  - name: ComparisonFileLibrary
+    value: product-readiness.ocs_data_views_r.output_comparison.csv
   - name: analysisProject
     value: Data_Views_R
 
@@ -43,6 +47,11 @@ jobs:
         parameters:
           fileOriginal: $(CredFile)
           fileLibrary: $(CredFileLibrary)
+
+      - template: '/miscellaneous/build_templates/config.yml@templates'
+        parameters:
+          fileOriginal: $(ComparisonFile)
+          fileLibrary: $(ComparisonFileLibrary)
 
       - script: Rscript.exe run_tests.R
         continueOnError: 'false'

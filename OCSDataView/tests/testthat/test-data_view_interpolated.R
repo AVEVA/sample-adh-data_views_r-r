@@ -1,7 +1,6 @@
 test_that("data view interpolated data retrieval works", {
   library(OCSDataView)
   # get config from yml
-  #test_config <- config::get(file = "OCSDataView\\conf\\test_config.yml")
   test_config <- config::get()
   Sys.setenv(R_CONFIG_ACTIVE = "default")
 
@@ -14,6 +13,10 @@ test_that("data view interpolated data retrieval works", {
   # execute the request
   my_data_frame <- get_data_view_interpolated(data_access_endpoint, test_config$tenant, test_config$namespace, test_config$test_only_dataview_id, test_config$test_only_start_index, test_config$test_only_end_index, test_config$test_only_interval, access_token)
 
-  # confirm the data frame has more than a header row. This presumes that the data frame contains at least two rows of data
-  expect_gt(nrow(my_data_frame), 2)
+  # confirm the data frame is the same as what was expected
+  wd <- getwd()
+  setwd("..\\..\\..")
+  comparison_df <- read.csv("sampleoutput.csv")
+  setwd(wd)
+  expect_true(all.equal(my_data_frame, comparison_df, check.names = FALSE))
 })
