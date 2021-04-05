@@ -54,7 +54,6 @@ jobs:
           fileLibrary: $(ComparisonFileLibrary)
 
       - script: Rscript.exe run_tests.R
-        continueOnError: 'false'
         displayName: 'Run tests'
 
       - task: PublishTestResults@2
