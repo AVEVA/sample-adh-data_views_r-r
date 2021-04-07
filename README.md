@@ -74,10 +74,23 @@ Note: Following version control best practices, the package's .tar.gz file is no
 
 ### Test Using RStudio
 
+The unit tests for this sample were built using [testthat](https://cran.r-project.org/web/packages/testthat/index.html).
+- The authentication test confirms that a token of non-trivial length is returned
+- The data view interpolated data test confirms that the correct data is received for the specified time period. This is done by obtaining the data frame from the library, then using the [all.equal](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/all.equal) function to compare it against a data frame generated from a locally-stored csv representing the "correct" answer. This style of test ensures that data retrieval and pagination are working.
+
+To run the automated tests:
 - Open the library in RStudio
-- Replace the values prefixed with `test_only_` in this file as necessary
-  - Note: The placeholder file preloads these data view values for use with the bulk upload sample wind data
-- Execute the tests in the terminal
+- Prepare the `sampleoutput.csv` for comparison (this repo's .gitignore prevents any sampleoutput.csv file from being checked in)
+  - If using Wind Turbine Data
+    - Rename the provided [sampleoutput_placeholder.csv](sampleoutput_placeholder.csv) file to `sampleoutput.csv`
+    - Confirm that the [Bulk Upload Sample](https://github.com/osisoft/sample-ocs-bulk_upload-dotnet) has been run and the necessary data and data view are in your OCS Namespace
+  - If using a different data set
+    - Obtain a csv of the data view output for this period using a tool of your choice
+      - For example, use this sample to generate a data frame, visually inspect it for accuracy, then save it to csv using [write.csv](https://www.rdocumentation.org/packages/AlphaPart/versions/0.8.1/topics/write.csv)
+    - Save this csv as `sampleoutput.csv` in the sample's root folder
+- Replace the values prefixed with `test_only_` in the `config.yml` file as necessary.
+  - Note: The placeholder file preloads these data view values for use with the [Bulk Upload Sample](https://github.com/osisoft/sample-ocs-bulk_upload-dotnet) wind turbine data
+- Execute the tests in the R terminal
   - library(devtools)
   - use_testthat
   - test()
