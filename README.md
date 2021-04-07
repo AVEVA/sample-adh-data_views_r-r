@@ -38,6 +38,7 @@ Developed against R version 4.0.3
   - [config](https://cran.r-project.org/web/packages/config/index.html)
 - The automated test uses the following library:
   - [testthat](https://cran.r-project.org/web/packages/testthat/index.html)
+  - [pacman](https://cran.r-project.org/web/packages/pacman/index.html)
 
 ### (Optional) Write Sample Data to OCS and Create the Data View
 The data we are using is available in our sample-ocs-bulk_upload-dotnet repository SampleCollections [folder](https://github.com/osisoft/sample-ocs-bulk_upload-dotnet/tree/master/SampleCollections/DataViewWind). The steps to upload this data are included in that folder. This sample also skips over the exercise of creating the data view, as this is included in the data that you can upload. To see how to create a Data View programmatically, please look at our other samples [here](https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/DATA_VIEWS_README.md).
