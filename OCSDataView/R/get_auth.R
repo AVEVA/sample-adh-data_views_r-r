@@ -1,9 +1,9 @@
-get_auth <- function(client_id, client_secret) {
+get_auth <- function(resource, client_id, client_secret) {
   library(httr)
   library(jsonlite)
 
   # configuration constants
-  token_enpoint <- "https://dat-b.osisoft.com/identity/connect/token"
+  token_enpoint <- paste(resource, "/identity/connect/token", sep="")
   grant_type <- "client_credentials"
 
   # build the message body and execute the POST command

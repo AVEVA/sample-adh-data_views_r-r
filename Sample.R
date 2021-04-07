@@ -15,7 +15,7 @@ config <- config::get() # defaults to config.yml
 Sys.setenv(R_CONFIG_ACTIVE = "default")
 
 # get auth response
-access_token <- OCSDataView::get_auth(config$client_id, config$client_secret)
+access_token <- OCSDataView::get_auth(config$resource, config$client_id, config$client_secret)
 
 # build the base url
 data_access_endpoint <- paste(config$resource, "/api/", config$api_version, sep = "")
