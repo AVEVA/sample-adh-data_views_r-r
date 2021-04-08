@@ -12,7 +12,7 @@ get_data_view_interpolated <- function(data_access_endpoint, tenant_id, namespac
   while (more_results) {
 
     # execute the request
-    data_view_response <- httr::GET(dataview_req_url, httr::add_headers(authorization = paste("Bearer", bearer_token, sep = " ")), httr::accept("text/plain"), httr::content_type_json())
+    data_view_response <- httr::GET(dataview_req_url, httr::add_headers(authorization = paste("Bearer", bearer_token, sep = " ")), httr::accept("application/json"), httr::content_type_json())
 
     # verify the response
     if(data_view_response$status_code < 200 || data_view_response$status_code >= 300){

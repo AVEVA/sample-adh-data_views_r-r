@@ -17,20 +17,14 @@ The R script, [Sample.R](Sample.R), is a standalone script that demonstrates usa
 **NOTE:** At this time, the package is not hosted on [CRAN](https://cran.r-project.org/) or any other R Package repository, and there are currently no plans to publish it outside of this GitHub sample.  
 If the package is not installed locally, the source code for the functions could be used as reference when building a custom script performing the same, or similar, actions. The source code is located in [the package's R folder](OCSDataView\R)
 
-## Requirements
-
-[Sample.R](Sample.R) is configured using the file [config.placeholder.yml](config.placeholder.yml). Before editing, rename this file to `config.yml`. This repository's `.gitignore` rules should prevent the file from ever being checked in to any fork or branch, to ensure credentials are not compromised.
-
-Replace the placeholders in the `config.yml` file with your Tenant Id, Namespace Id, Client Id and Client Secret, and the current Api Version.
-
-Developed against R version 4.0.3
-
 ## Running the sample
 
 ### Prerequisites
 
 - Register a Client Credential client in OCS.
-- Replace the placeholders in the `config.yml` file with your Tenant Id, Client Id, and Client Secret obtained from registration.
+- Rename the file [config.placeholder.yml](config.placeholder.yml) to `config.yml`
+  - This repository's `.gitignore` rules should prevent the file from ever being checked in to any fork or branch, to ensure credentials are not compromised.
+- Replace the placeholder values in the `config.yml` file with your Tenant Id, Client Id, and Client Secret obtained from registration.
 - [Download R](https://cran.r-project.org/mirrors.html)
 - [Sample.R](Sample.R) and the library use the following three R libraries, however they will be installed if missing
   - [httr](https://cran.r-project.org/web/packages/httr/index.html)
@@ -41,7 +35,7 @@ Developed against R version 4.0.3
   - [pacman](https://cran.r-project.org/web/packages/pacman/index.html)
 
 ### (Optional) Write Sample Data to OCS and Create the Data View
-The data we are using is available in our sample-ocs-bulk_upload-dotnet repository SampleCollections [folder](https://github.com/osisoft/sample-ocs-bulk_upload-dotnet/tree/master/SampleCollections/DataViewWind). The steps to upload this data are included in that folder. This sample also skips over the exercise of creating the data view, as this is included in the data that you can upload. To see how to create a Data View programmatically, please look at our other samples [here](https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/DATA_VIEWS_README.md).
+The data we are using is available in our sample-ocs-bulk_upload-dotnet repository SampleCollections [folder](https://github.com/osisoft/sample-ocs-bulk_upload-dotnet/tree/master/SampleCollections/DataViewWind). The steps to upload this data are included in that folder. This sample also skips over the exercise of creating the data view, as this is included in the data that you can upload. To see how to create a Data View programmatically, please see the Data Views samples [here](https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/DATA_VIEWS_README.md).
 
 This sample data is similar to what you might have from a site where the data has unexpected values and not every turbine behaves exactly the same. The data is only for 1 day. Repeating this exercise but using more days of data would give you a better prediction.
 
@@ -62,7 +56,6 @@ Note: Following version control best practices, the package's .tar.gz file is no
 - Copy this file to any machine that would like to use the library
 - Install the library using `install.packages` command:
   - `install.packages(path_to_file, repos = NULL, type="source")`
-- Note: If installing the library from its .tar.gz file is desired, please provide `samples@osisoft.com` with details on the use case and feedback so we can discuss alternate hosting platforms for this file (such as [CRAN](https://cran.r-project.org/)).
 
 
 #### Run the Sample
