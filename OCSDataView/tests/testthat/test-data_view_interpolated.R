@@ -16,7 +16,7 @@ test_that("data view interpolated data retrieval works", {
   # confirm the data frame is the same as what was expected
   wd <- getwd()
   setwd("..\\..\\..")
-  comparison_df <- read.csv("sampleoutput.csv")
+  comparison_df <- read.csv("interpolatedSampleOutput.csv")
   setwd(wd)
   expect_true(all.equal(my_data_frame, comparison_df, check.names = FALSE))
 })
