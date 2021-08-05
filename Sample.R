@@ -5,9 +5,9 @@ library(OCSDataView)
 
 #### Data View Configuration ####
 dataview_id <- "WindTurbineData"
-start_index <- "3/11/2020"
-end_index <- "3/12/2020"
-interval <- "00:01:00"
+start_index <- "3/11/2020 00:00:00"
+end_index <- "3/11/2020 02:00:00"
+interval <- "00:00:05"
 #################################
 
 # get config from yml
@@ -33,7 +33,7 @@ nrow(my_interpolated_data_frame)
 # Stored Data Retrieval #
 
 # execute the request for stored data
-my_stored_data_frame <- OCSDataView::get_data_view_interpolated(data_access_endpoint, config$tenant, config$namespace, dataview_id, start_index, end_index, interval, access_token)
+my_stored_data_frame <- OCSDataView::get_data_view_stored(data_access_endpoint, config$tenant, config$namespace, dataview_id, start_index, end_index, access_token)
 
 # output the header, first and last 5 rows, and total row count to confirm the entire data view was returned
 head(my_stored_data_frame)

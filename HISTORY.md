@@ -3,6 +3,7 @@
 ## 1.1.0 / 2021-08-09
 
 - Added stored value retrieval
+- Added URLencode() wrappers on each URL portion
 
 ## 1.0.2 / 2021-07-13
 
