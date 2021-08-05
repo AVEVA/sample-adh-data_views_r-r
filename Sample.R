@@ -20,10 +20,22 @@ access_token <- OCSDataView::get_auth(config$resource, config$client_id, config$
 # build the base url
 data_access_endpoint <- paste(config$resource, "/api/", config$api_version, sep = "")
 
-# execute the request
-my_data_frame <- OCSDataView::get_data_view_interpolated(data_access_endpoint, config$tenant, config$namespace, dataview_id, start_index, end_index, interval, access_token)
+# Interpolated Data Retrieval #
+
+# execute the request for interpolated data
+my_interpolated_data_frame <- OCSDataView::get_data_view_interpolated(data_access_endpoint, config$tenant, config$namespace, dataview_id, start_index, end_index, interval, access_token)
 
 # output the header, first and last 5 rows, and total row count to confirm the entire data view was returned
-head(my_data_frame)
-tail(my_data_frame)
-nrow(my_data_frame)
+head(my_interpolated_data_frame)
+tail(my_interpolated_data_frame)
+nrow(my_interpolated_data_frame)
+
+# Stored Data Retrieval #
+
+# execute the request for stored data
+my_stored_data_frame <- OCSDataView::get_data_view_interpolated(data_access_endpoint, config$tenant, config$namespace, dataview_id, start_index, end_index, interval, access_token)
+
+# output the header, first and last 5 rows, and total row count to confirm the entire data view was returned
+head(my_stored_data_frame)
+tail(my_stored_data_frame)
+nrow(my_stored_data_frame)

@@ -1,5 +1,9 @@
 # Version History
 
+## 1.1.0 / 2021-08-09
+
+- Added stored value retrieval
+
 ## 1.0.2 / 2021-07-13
 
 - Update sampleoutput_placeholder.csv file

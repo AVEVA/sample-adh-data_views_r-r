@@ -30,10 +30,14 @@ variables:
     value: config.yml
   - name: CredFileLibrary
     value: product-readiness.data_views_r.r
-  - name: ComparisonFile
-    value: sampleoutput.csv
-  - name: ComparisonFileLibrary
-    value: product-readiness.ocs_data_views_r.output_comparison.csv
+  - name: ComparisonFileInterpolated
+    value: interpolatedSampleOutput.csv
+  - name: ComparisonFileLibraryInterpolated
+    value: product-readiness.ocs_data_views_r.interpolated_output_comparison.csv
+  - name: ComparisonFileStored
+    value: storedSampleOutput.csv
+  - name: ComparisonFileLibraryStored
+    value: product-readiness.ocs_data_views_r.stored_output_comparison.csv
   - name: analysisProject
     value: Data_Views_R
 
@@ -50,8 +54,13 @@ jobs:
 
       - template: '/miscellaneous/build_templates/config.yml@templates'
         parameters:
-          fileOriginal: $(ComparisonFile)
-          fileLibrary: $(ComparisonFileLibrary)
+          fileOriginal: $(ComparisonFileInterpolated)
+          fileLibrary: $(ComparisonFileLibraryInterpolated)
+
+      - template: '/miscellaneous/build_templates/config.yml@templates'
+        parameters:
+          fileOriginal: $(ComparisonFileStored)
+          fileLibrary: $(ComparisonFileLibraryStored)
 
       - script: Rscript.exe run_tests.R
         displayName: 'Run tests'
