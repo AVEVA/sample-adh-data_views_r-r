@@ -3,8 +3,10 @@ get_data_view_interpolated <- function(data_access_endpoint, tenant_id, namespac
   library(jsonlite)
 
   # build the correct URL from the provided properties
-  dataview_req_url <- paste(URLencode(data_access_endpoint), "/tenants/", URLencode(tenant_id), "/namespaces/", URLencode(namespace_id), "/DataViews/", URLencode(dataview_id),
-                            "/Data/Interpolated?startIndex=", URLencode(start_index), "&endIndex=", URLencode(end_index), "&interval=", URLencode(interval), sep = "")
+  raw_dataview_req_url <- paste(data_access_endpoint, "/tenants/", tenant_id, "/namespaces/", namespace_id, "/DataViews/", dataview_id,
+                            "/Data/Interpolated?startIndex=", start_index, "&endIndex=", end_index, "&interval=", interval, sep = "")
+
+  dataview_req_url <- URLencode(raw_dataview_req_url)
 
   overall_data_frame <- NULL
   more_results <- TRUE

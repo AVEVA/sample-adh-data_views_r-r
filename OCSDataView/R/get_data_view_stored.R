@@ -3,8 +3,10 @@ get_data_view_stored <- function(data_access_endpoint, tenant_id, namespace_id, 
   library(jsonlite)
 
   # build the correct URL from the provided properties
-  dataview_req_url <- paste(URLencode(data_access_endpoint), "/tenants/", URLencode(tenant_id), "/namespaces/", URLencode(namespace_id), "/DataViews/", URLencode(dataview_id),
-                            "/Data/Stored?startIndex=", URLencode(start_index), "&endIndex=", URLencode(end_index), sep = "")
+  raw_dataview_req_url <- paste(data_access_endpoint, "/tenants/", tenant_id, "/namespaces/", namespace_id, "/DataViews/", dataview_id,
+                            "/Data/Stored?startIndex=", start_index, "&endIndex=", end_index, sep = "")
+
+  dataview_req_url <- URLencode(raw_dataview_req_url)
 
   overall_data_frame <- NULL
   more_results <- TRUE
