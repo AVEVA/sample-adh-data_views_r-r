@@ -40,7 +40,8 @@ vignettes/*.pdf
 
 # unit test output
 output.xml
-sampleoutput.csv
+*sampleoutput.csv
 
 # Credential Config Files
+product-readiness.*
 *config.yml

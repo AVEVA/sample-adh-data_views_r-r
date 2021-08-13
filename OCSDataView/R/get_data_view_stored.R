@@ -1,10 +1,10 @@
-get_data_view_interpolated <- function(data_access_endpoint, tenant_id, namespace_id, dataview_id, start_index, end_index, interval, bearer_token) {
+get_data_view_stored <- function(data_access_endpoint, tenant_id, namespace_id, dataview_id, start_index, end_index, bearer_token) {
   library(httr)
   library(jsonlite)
 
   # build the correct URL from the provided properties
   raw_dataview_req_url <- paste(data_access_endpoint, "/tenants/", tenant_id, "/namespaces/", namespace_id, "/DataViews/", dataview_id,
-                            "/Data/Interpolated?startIndex=", start_index, "&endIndex=", end_index, "&interval=", interval, sep = "")
+                            "/Data/Stored?startIndex=", start_index, "&endIndex=", end_index, sep = "")
 
   dataview_req_url <- URLencode(raw_dataview_req_url)
 
@@ -18,7 +18,7 @@ get_data_view_interpolated <- function(data_access_endpoint, tenant_id, namespac
 
     # verify the response
     if(data_view_response$status_code < 200 || data_view_response$status_code >= 300){
-      stop(paste("Error retrieving data view interpolated data. Status code:", data_view_response$status_code, sep=" "))
+      stop(paste("Error retrieving data view stored data. Status code:", data_view_response$status_code, sep=" "))
     }
 
     # process the output into a data frame
