@@ -1,5 +1,9 @@
 # Version History
 
+## 1.1.1 / 2021-11-08
+
+- Updated R to 4.1.2
+
 ## 1.1.0 / 2021-08-09
 
 - Added stored value retrieval
