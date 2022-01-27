@@ -1,16 +1,16 @@
 \name{get_data_view_stored}
 \alias{get_data_view_stored}
-\title{OCS Data View Stored Data Retrieval}
+\title{ADH Data View Stored Data Retrieval}
 \usage{
 get_data_view_stored(data_access_endpoint, tenant_id, namespace_id, dataview_id, start_index, end_index, access_token)
 }
 \description{
-Retrieves stored data from OCS for the specified data view at the specified time indexes,
+Retrieves stored data from ADH for the specified data view at the specified time indexes,
 parses the response, and returns the data as a data frame.
 }
 \examples{
-data_access_endpoint <- "https://dat-b.osisoft.com/api/v1"
-tenant_id <- "<OCS tenant id>"
+data_access_endpoint <- "https://uswe.datahub.connect.aveva.com/api/v1"
+tenant_id <- "<ADH tenant id>"
 namespace_id <- "samples"
 dataview_id <- "DataView1"
 start_index <- "1/1/2021"

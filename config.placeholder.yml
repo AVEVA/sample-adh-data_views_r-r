@@ -1,7 +1,7 @@
 default:
   client_id: "REPLACE_WITH_CLIENT_ID"
   client_secret: "REPLACE_WITH_CLIENT_SECRET"
-  resource: "https://dat-b.osisoft.com"
+  resource: "https://uswe.datahub.connect.aveva.com"
   api_version: "v1"
   tenant: "REPLACE_WITH_TENANT_ID"
   namespace: "REPLACE_WITH_NAMESPACE_ID"
