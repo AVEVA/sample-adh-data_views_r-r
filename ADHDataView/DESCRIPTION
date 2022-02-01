@@ -1,7 +1,7 @@
 Package: ADHDataView
 Type: Package
 Title: Provide Shaped Data from ADH
-Version: 1.0.0
+Version: 1.0.1
 Author: OSIsoft LLC
 Maintainer: OSISoft Samples <samples@aveva.com>
 Description: This package is a very simple client library that connects
@@ -14,7 +14,7 @@ Encoding: UTF-8
 LazyData: true
 Depends: R(>= 4.1.2)
 Imports: 
-    httr(>= 1.4.2), jsonlite(>= 1.7.2), config(>= 0.3.1)
+    httr(>= 1.4.2), jsonlite(>= 1.7.3), config(>= 0.3.1)
 Suggests: 
-    testthat (>= 3.0.2)
+    testthat (>= 3.1.2)
 Config/testthat/edition: 3
