@@ -1,5 +1,5 @@
 test_that("authentication works", {
-  library(OCSDataView)
+  library(ADHDataView)
   # get config from yml
   test_config <- config::get()
   Sys.setenv(R_CONFIG_ACTIVE = "default")
