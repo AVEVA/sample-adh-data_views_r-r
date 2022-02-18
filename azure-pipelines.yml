@@ -45,7 +45,7 @@ jobs:
   - job: Tests
     pool:
       name: OpsGuild-Staging1
-      demands: COMPUTERNAME -equals ARR-TEST
+      demands: Agent.Name -equals ARR-TEST
     steps:
       - template: '/miscellaneous/build_templates/config.yml@templates'
         parameters:
