@@ -44,8 +44,8 @@ variables:
 jobs:
   - job: Tests
     pool:
-      name: 00-OSIManaged-Test
-      demands: COMPUTERNAME -equals $(buildAgent)
+      name: OpsGuild-Staging1
+      demands: COMPUTERNAME -equals ARR-TEST
     steps:
       - template: '/miscellaneous/build_templates/config.yml@templates'
         parameters:
