@@ -19,6 +19,10 @@ schedules:
 
 resources:
   repositories:
+    - repository: OpsGuildAutomationRepo
+      type: git
+      name: Engineering/OpsGuild.Automation
+      ref: refs/heads/main
     - repository: templates
       type: github
       name: osisoft/OSI-Samples
@@ -44,8 +48,8 @@ variables:
 jobs:
   - job: Tests
     pool:
-      name: 00-OSIManaged-Test
-      demands: COMPUTERNAME -equals $(buildAgent)
+      name: 00-OSIManaged-Build
+      demands: SKU -equals VSBuildTools
     steps:
       - template: '/miscellaneous/build_templates/config.yml@templates'
         parameters:
@@ -72,6 +76,6 @@ jobs:
           testResultsFiles: '**\output.xml'
         displayName: 'Publish test results'
 
-      - template: '/miscellaneous/build_templates/analysis.yml@templates'
-        parameters:
-          skipPolaris: true
+  - template: '/miscellaneous/build_templates/code-analysis.yml@templates'
+    parameters:
+      skipPolaris: true
