@@ -49,7 +49,7 @@ jobs:
   - job: Tests
     pool:
       name: 00-OSIManaged-Build
-      demands: SKU -equals VSBuildTools
+      demands: SKU -equals VSEnterprise
     steps:
       - template: '/miscellaneous/build_templates/config.yml@templates'
         parameters:
