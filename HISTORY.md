@@ -1,5 +1,9 @@
 # Version History
 
+## 1.2.1 / 2022-03-15
+
+- Updated dependencies
+
 ## 1.2.0 / 2022-01-27
 
 - Updated for AVEVA Data Hub
