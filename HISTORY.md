@@ -1,5 +1,10 @@
 # Version History
 
+## 1.2.1 / 2022-03-22
+
+- Changed agent used in pipeline
+- Use internal code analysis template
+
 ## 1.2.0 / 2022-01-27
 
 - Updated for AVEVA Data Hub
