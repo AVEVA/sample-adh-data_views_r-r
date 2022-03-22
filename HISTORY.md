@@ -1,9 +1,13 @@
 # Version History
 
-## 1.2.1 / 2022-03-22
+## 1.2.2 / 2022-03-22
 
 - Changed agent used in pipeline
 - Use internal code analysis template
+
+## 1.2.1 / 2022-03-15
+
+- Updated dependencies
 
 ## 1.2.0 / 2022-01-27
 
