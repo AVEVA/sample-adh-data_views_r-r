@@ -45,12 +45,15 @@ variables:
   - name: analysisProject
     value: Data_Views_R
 
+parameters:
+  - name: containerDemands
+    default: R
+
 jobs:
   - job: Tests
     pool:
       name: 00-OSIManaged-Build
-      demands: 
-      - R -equals 4.1.3
+      demands: ${{ parameters.containerDemands }}
     steps:
       - template: '/miscellaneous/build_templates/config.yml@templates'
         parameters:
