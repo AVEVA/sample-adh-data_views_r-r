@@ -1,7 +1,7 @@
 Package: ADHDataView
 Type: Package
 Title: Provide Shaped Data from ADH
-Version: 1.2.1
+Version: 1.2.3
 Author: OSIsoft LLC
 Maintainer: OSISoft Samples <samples@aveva.com>
 Description: This package is a very simple client library that connects
