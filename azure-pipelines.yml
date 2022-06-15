@@ -47,7 +47,7 @@ variables:
 
 parameters:
   - name: containerDemands
-    default: R
+    default: R -gVersion 4.1.3
 
 jobs:
   - job: Tests
