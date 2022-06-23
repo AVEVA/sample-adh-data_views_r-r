@@ -1,8 +1,12 @@
 # Version History
 
-## 1.2.3 / 2022-06-17
+## 1.2.4 / 2022-06-17
 
 - Updated dependencies
+
+## 1.2.3 / 2022-06-13
+
+- Parameterized pipeline container demands
 
 ## 1.2.2 / 2022-03-22
 
