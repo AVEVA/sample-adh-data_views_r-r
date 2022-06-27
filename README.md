@@ -3,9 +3,9 @@
 | :loudspeaker: **Notice**: Samples have been updated to reflect that they work on AVEVA Data Hub. The samples also work on OSIsoft Cloud Services unless otherwise noted. |
 | -----------------------------------------------------------------------------------------------|  
 
-**Version:** 1.2.3
+**Version:** 1.2.4
 
-[![Build Status](https://dev.azure.com/osieng/engineering/_apis/build/status/product-readiness/aveva.sample-adh-data_views_r-r?branchName=main)](https://dev.azure.com/osieng/engineering/_build/latest?definitionId=3168&branchName=main)
+[![Build Status](https://dev.azure.com/osieng/engineering/_apis/build/status/product-readiness/ADH/aveva.sample-adh-data_views_r-r?repoName=osisoft%2Fsample-adh-data_views_r-r&branchName=main)](https://dev.azure.com/osieng/engineering/_build/latest?definitionId=3168&repoName=osisoft%2Fsample-adh-data_views_r-r&branchName=main)
 
 This sample consists of an [R Package](ADHDataView) and an [R Script](Sample.R). 
 
