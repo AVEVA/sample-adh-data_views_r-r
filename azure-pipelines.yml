@@ -51,6 +51,7 @@ parameters:
 
 jobs:
   - job: Tests
+    condition: ne(variables['Build.Reason'], 'Schedule')
     pool:
       name: 00-OSIManaged-Build
       demands: ${{ parameters.containerDemands }}
