@@ -1,5 +1,10 @@
 # Version History
 
+## 1.2.5 / 2022-08-09
+
+- Remove weekly tests
+- Parameterize pool and demands
+
 ## 1.2.4 / 2022-06-17
 
 - Updated dependencies
