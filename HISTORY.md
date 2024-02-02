@@ -1,5 +1,9 @@
 # Version History
 
+## 1.2.6 / 2023-10-13
+
+- Migrate Pipelines
+
 ## 1.2.5 / 2022-08-09
 
 - Remove weekly tests
