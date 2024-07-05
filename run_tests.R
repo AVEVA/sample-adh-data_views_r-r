@@ -4,10 +4,10 @@ if (!require("config")) install.packages("config", repos = "https://cran.r-proje
 if (!require("httr")) install.packages("httr", repos = "https://cran.r-project.org", quiet = TRUE)
 if (!require("jsonlite")) install.packages("jsonlite", repos = "https://cran.r-project.org", quiet = TRUE)
 
-install.packages("ADHDataView", repos=NULL, type="source")
+install.packages("CdsDataView", repos=NULL, type="source")
 
 require("pacman", quietly = TRUE)
 p_load("testthat", "xml2")
 
 options(testthat.output_file = ".\\output.xml")
-test_results <- testthat::test_dir(path=".\\ADHDataView\\tests\\testthat", reporter="junit")
+test_results <- testthat::test_dir(path=".\\CdsDataView\\tests\\testthat", reporter="junit")
