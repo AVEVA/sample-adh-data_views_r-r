@@ -1,16 +1,16 @@
 \name{get_data_view_interpolated}
 \alias{get_data_view_interpolated}
-\title{ADH Data View Interpolated Data Retrieval}
+\title{Cds Data View Interpolated Data Retrieval}
 \usage{
 get_data_view_interpolated(data_access_endpoint, tenant_id, namespace_id, dataview_id, start_index, end_index, interval, access_token)
 }
 \description{
-Retrieves interpolated data from ADH for the specified data view at the specified time indexes,
+Retrieves interpolated data from Cds for the specified data view at the specified time indexes,
 parses the response, and returns the data as a data frame.
 }
 \examples{
 data_access_endpoint <- "https://uswe.datahub.connect.aveva.com/api/v1"
-tenant_id <- "<ADH tenant id>"
+tenant_id <- "<Cds tenant id>"
 namespace_id <- "samples"
 dataview_id <- "DataView1"
 start_index <- "1/1/2021"

@@ -1,14 +1,14 @@
-Package: ADHDataView
+Package: CdsDataView
 Type: Package
-Title: Provide Shaped Data from ADH
+Title: Provide Shaped Data from Cds
 Version: 1.2.4
 Author: OSIsoft LLC
 Maintainer: OSISoft Samples <samples@aveva.com>
 Description: This package is a very simple client library that connects
-    to AVEVA Data Hub (ADH) with client credentials, then returns
+    to CONNECT data services (Cds) with client credentials, then returns
     data from a data view. This is intended to be the bare minimum to demo
-    the creation of an R data frame from ADH data and is not intended to be
-    an exhaustive example of ADH capabilities.
+    the creation of an R data frame from Cds data and is not intended to be
+    an exhaustive example of Cds capabilities.
 License: Apache 2.0
 Encoding: UTF-8
 LazyData: true
